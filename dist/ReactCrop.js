@@ -1092,7 +1092,9 @@ var ReactCrop = function (_PureComponent) {
           crop = _props2.crop,
           disabled = _props2.disabled,
           imageAlt = _props2.imageAlt,
-          src = _props2.src;
+          src = _props2.src,
+          style = _props2.style,
+          imageStyle = _props2.imageStyle;
       var cropIsActive = this.state.cropIsActive;
 
       var cropSelection = void 0;
@@ -1130,6 +1132,7 @@ var ReactCrop = function (_PureComponent) {
             _this3.componentRef = n;
           },
           className: componentClasses.join(' '),
+          style: style,
           onTouchStart: this.onComponentMouseTouchDown,
           onMouseDown: this.onComponentMouseTouchDown,
           tabIndex: '1',
@@ -1141,6 +1144,7 @@ var ReactCrop = function (_PureComponent) {
           },
           crossOrigin: crossorigin,
           className: 'ReactCrop__image',
+          style: imageStyle,
           src: src,
           onLoad: function onLoad(e) {
             return _this3.onImageLoad(e.target);
@@ -1198,7 +1202,9 @@ ReactCrop.propTypes = {
   onDragEnd: _propTypes2.default.func,
   disabled: _propTypes2.default.bool,
   crossorigin: _propTypes2.default.string,
-  children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node])
+  children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]),
+  style: _propTypes2.default.object,
+  imageStyle: _propTypes2.default.object
 };
 
 ReactCrop.defaultProps = {
@@ -1215,7 +1221,9 @@ ReactCrop.defaultProps = {
   onImageLoaded: function onImageLoaded() {},
   onDragStart: function onDragStart() {},
   onDragEnd: function onDragEnd() {},
-  children: undefined
+  children: undefined,
+  style: undefined,
+  imageStyle: undefined
 };
 
 module.exports = ReactCrop;
